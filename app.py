@@ -80,7 +80,7 @@ def main():
 	"""A Simple CRUD Blog App"""
 	html_temp = """
 		<div style="background-color:{};padding:10px;border-radius:10px">
-		<h1 style="color:{};text-align:center;">Simple Blog </h1>
+		<h1 style="color:{};text-align:center;">cocre Blog </h1>
 		</div>
 		"""
 	st.markdown(html_temp.format('royalblue','white'),unsafe_allow_html=True)
