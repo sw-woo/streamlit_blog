@@ -1,5 +1,7 @@
+from importlib.resources import path
 import streamlit as st
 import pandas as pd
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # # NLP pkgs
 # import spacy
@@ -13,7 +15,14 @@ from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 
 import matplotlib.pyplot as plt
 import matplotlib
+import matplotlib.font_manager as fm
 matplotlib.use('Agg')
+
+# 한글 폰트 사용을 위해서 세팅
+from matplotlib import font_manager, rc
+font_path = "./NanumBarunGothic-YetHangul.otf"
+font = font_manager.FontProperties(fname=font_path).get_name()
+rc('font', family=font)
 
 
 # Avatar Image using a url
@@ -43,8 +52,8 @@ title_temp ="""
 article_temp ="""
 	<div style="background-color:#464e5f;padding:10px;border-radius:5px;margin:10px;">
 	<h4 style="color:white;text-align:center;">{}</h1>
-	<h6>Author:{}</h6> 
-	<h6>Post Date: {}</h6>
+	<h6 style="color:white;> Author:{}</h6> 
+	<h6 style="color:white;> Post Date: {}</h6>
 	<img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="vertical-align: middle;width: 50px;height: 50px;border-radius: 50%;" >
 	<br/>
 	<br/>

@@ -1,9 +1,10 @@
+from operator import index
 import sqlite3
 conn = sqlite3.connect('data.db')
 c = conn.cursor()
 
 def create_table():
-	c.execute('CREATE TABLE IF NOT EXISTS blogtable(author TEXT,title TEXT,article TEXT,postdate,DATE)')
+	c.execute('CREATE TABLE IF NOT EXISTS blogtable(author TEXT,title TEXT,article TEXT,postdate DATE)')
 
 
 def add_data(author,title,article,postdate):
